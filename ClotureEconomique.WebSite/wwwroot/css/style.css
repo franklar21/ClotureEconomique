@@ -3352,4 +3352,13 @@ label {
   margin-top: 30px;
   font-weight: 700;
 }
+
 /*# sourceMappingURL=style.css.map */
+
+.champReq {
+    color:red;
+}
+
+.titreChamp {
+    font-weight:bold;
+}

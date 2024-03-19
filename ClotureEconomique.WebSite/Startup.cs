@@ -23,7 +23,9 @@ namespace ClotureEconomique.WebSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages();//ptions.Conventions.AddPageRoute("/Accueil", "");
+                //options.Conventions.AddPageRoute("/Accueil", "Index");
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,7 +37,7 @@ namespace ClotureEconomique.WebSite
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Erreur");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -47,11 +49,21 @@ namespace ClotureEconomique.WebSite
 
             app.UseAuthorization();
 
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapRazorPages();
+            //});
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapFallbackToFile("/Accueil.cshtml");
+
+                endpoints.MapGet("/", async context =>
+                {
+                    context.Response.Redirect("/Accueil");
+                });
             });
+
         }
     }
 }
