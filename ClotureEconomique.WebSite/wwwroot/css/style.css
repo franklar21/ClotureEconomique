@@ -724,7 +724,10 @@ ul.navbar-nav > li > a {
 }
 ul.navbar-nav > li:hover > a,
 ul.navbar-nav > li.active > a {
-  color: #0039a6 !important;
+    /*color: #0039a6 !important;*/
+    color: white;
+    text-decoration: underline;
+    font-size:15px;
 }
 
 /*-- Logo --*/
@@ -1216,10 +1219,11 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 ================================================== */
 /*-- Main slide --*/
 .banner-carousel .banner-carousel-item {
-  height: 700px;
-  color: #fff;
-  background-position: 50% 50%;
-  background-size: cover;
+    height: 700px;
+    color: #fff;
+    background-position: 50% 50%;
+    background-size: cover;
+    object-fit: cover;
 }
 @media (max-width: 991px) {
   .banner-carousel .banner-carousel-item {
